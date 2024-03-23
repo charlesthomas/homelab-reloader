@@ -10,6 +10,23 @@ commonLabels:
 
 resources:
 - resources/namespaces.yaml
+patches:
+- patch: |-
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: reloader
+      namespace: reloader
+      annotations:
+        gethomepage.dev/href: https://reloader.crt.house
+        gethomepage.dev/enabled: "true"
+        gethomepage.dev/description: 
+        gethomepage.dev/group: 
+        gethomepage.dev/icon: reloader
+        gethomepage.dev/name: reloader
+        gethomepage.dev/pod-selector: ""
+  target:
+    kind: Ingress
 helmCharts:
 - name: reloader
   namespace: reloader
