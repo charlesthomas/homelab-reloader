@@ -9,7 +9,7 @@ labels: 'app.kubernetes.io/name: reloader'
 name: reloader
 namespace: reloader
 pvc: false
-reloader: true
+reloader: false
 resources:
 - deployments.yaml
 - rbac.yaml
