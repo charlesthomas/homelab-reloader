@@ -9,10 +9,18 @@ commonLabels:
   app.kubernetes.io/name: reloader
 
 resources:
+- resources/deployments.yaml
 - resources/namespaces.yaml
-helmCharts:
-- name: reloader
-  namespace: reloader
-  releaseName: reloader
-  repo: https://stakater.github.io/stakater-charts
-  valuesFile: helm/values.yaml
+- resources/rbac.yaml
+- resources/service-accounts.yaml
+patches:
+- patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: all
+      namespace: reloader
+      annotations:
+        reloader.stakater.com/auto: "true"
+  target:
+    kind: Deployment
