@@ -16,7 +16,7 @@ spec:
         app: reloader
     spec:
       containers:
-      - image: "ghcr.io/stakater/reloader:v1.0.52"
+      - image: reloader
         imagePullPolicy: IfNotPresent
         name: reloader
         args:

@@ -8,6 +8,11 @@ commonAnnotations:
 commonLabels:
   app.kubernetes.io/name: reloader
 
+images:
+  - name: reloader
+    newName: ghcr.io/stakater/reloader
+    newTag: v1.0.52
+
 resources:
 - resources/deployments.yaml
 - resources/namespaces.yaml
