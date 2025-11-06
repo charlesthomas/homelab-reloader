@@ -11,7 +11,7 @@ commonLabels:
 images:
   - name: reloader
     newName: ghcr.io/stakater/reloader
-    newTag: v1.4.8
+    newTag: v1.4.10
 
 resources:
 - resources/deployments.yaml
