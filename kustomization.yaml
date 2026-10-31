@@ -5,8 +5,10 @@ namespace: reloader
 
 commonAnnotations:
   repo: https://github.com/charlesthomas/homelab-reloader
-commonLabels:
-  app.kubernetes.io/name: reloader
+labels:
+- includeSelectors: true
+  pairs:
+    app.kubernetes.io/name: reloader
 
 images:
   - name: reloader
