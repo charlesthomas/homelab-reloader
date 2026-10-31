@@ -5,8 +5,10 @@ namespace: reloader
 
 commonAnnotations:
   repo: https://github.com/charlesthomas/homelab-reloader
-commonLabels:
-  app.kubernetes.io/name: reloader
+labels:
+- includeSelectors: true
+  pairs:
+    app.kubernetes.io/name: reloader
 
 images:
   - name: reloader
@@ -18,3 +20,11 @@ resources:
 - resources/namespaces.yaml
 - resources/rbac.yaml
 - resources/service-accounts.yaml
+configMapGenerator:
+- name: grafana-dashboard-reloader
+  files:
+  - grafana/reloader.json
+  options:
+    disableNameSuffixHash: true
+    labels:
+      grafana_dashboard: "1"
