@@ -13,7 +13,7 @@ labels:
 images:
   - name: reloader
     newName: ghcr.io/stakater/reloader
-    newTag: v1.4.23
+    newTag: v1.4.25
 
 resources:
 - resources/deployments.yaml
